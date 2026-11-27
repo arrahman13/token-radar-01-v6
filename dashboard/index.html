@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar v6 — which pre-token protocol is worth farming next</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="title-block">
+    <h1>TOKEN RADAR <span class="v">v6</span></h1>
+    <p class="sub">Which pre-token protocol is worth farming next — and what to do about it.</p>
+    <p class="meta" id="meta-line">Snapshot loading…</p>
+  </div>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<div class="integrity" id="integrity">Integrity check running…</div>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="board" class="active">Board</button>
+  <button data-tab="evidence">Evidence &amp; method</button>
+  <button data-tab="disposition">All 758 accounted for</button>
+  <button data-tab="live">Live tokens</button>
+</nav>
+
+<main>
+  <section id="tab-board" class="tabpage active">
+    <div class="controls">
+      <label>Category
+        <select id="filter-category"><option value="">All categories</option></select>
+      </label>
+      <label>Search <input id="filter-text" type="search" placeholder="name or slug"></label>
+      <label class="check"><input id="filter-watchlist" type="checkbox"> Watchlist only</label>
+      <span class="count" id="row-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="board-table">
+        <thead><tr>
+          <th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th>
+          <th>Age</th><th>P(token)</th><th>Implied value</th><th>80% range</th><th>Net $/h</th><th>Min capital</th>
+        </tr></thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </div>
+    <div class="detail" id="detail"></div>
+  </section>
+
+  <section id="tab-evidence" class="tabpage">
+    <h2>How the radar is built</h2>
+    <div id="evidence"></div>
+  </section>
+
+  <section id="tab-disposition" class="tabpage">
+    <h2>Every one of the 758 protocols, accounted for</h2>
+    <p class="note">The board ranks the pre-token protocols that pass the watchlist's own exclusion test.
+    Everything else is listed here with the reason it is not on the board — no protocol in the
+    snapshot is left unaccounted for.</p>
+    <div id="disp-counts"></div>
+    <div class="table-wrap">
+      <table id="disp-table">
+        <thead><tr><th>Protocol</th><th>Status</th><th>Reason</th></tr></thead>
+        <tbody id="disp-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="tab-live" class="tabpage">
+    <h2>Live tokens — the market's own values, not ranked</h2>
+    <p class="note">These protocols already trade. Their market caps are the market's verdict, never the
+    model's, so they sit apart from the ranked board.</p>
+    <div class="table-wrap">
+      <table id="live-table">
+        <thead><tr><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>Market cap</th><th>7d</th></tr></thead>
+        <tbody id="live-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Token Radar v6. The implied value is the model's own claim, fitted from the snapshot's figures;
+  the watchlist is DefiLlama's record, not proof — a protocol is said to record no token, never that
+  it has none. Farm verdicts rest on stated planning assumptions (capture share 0.001%, typical gas);
+  check the protocol's own page and the chain's fee page before you act. Nothing here is investment advice.</p>
+</footer>
+
+<script src="model.js"></script>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
